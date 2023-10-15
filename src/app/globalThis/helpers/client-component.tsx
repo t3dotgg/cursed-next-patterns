@@ -9,7 +9,8 @@ declare const globalThis: {
 };
 
 export const SomeClientComponent = () => {
-  const content = globalThis.__SERVER_CONTENT?.content;
+  const content =
+    globalThis.__SERVER_CONTENT?.content ?? "content was not loaded :(";
 
   return <div>{content}</div>;
 };
