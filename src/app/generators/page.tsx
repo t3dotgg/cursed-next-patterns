@@ -13,7 +13,7 @@ const Steps = generatorComponent(async function* () {
   return <h1>Step {++i}</h1>;
 });
 
-export default function Home() {
+export default function GeneratorPage() {
   return (
     <div className="h-screen flex flex-col gap-4 justify-center items-center">
       <h1 className="text-xl font-bold">

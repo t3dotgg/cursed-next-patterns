@@ -1,10 +1,12 @@
+"use client";
+
 import { useId } from "react";
 import { useServerInsertedHTML } from "next/navigation";
 
+// Put these typedefs in a d.ts if you actually use this pattern
 type ServerSideContent = {
   content: string;
 };
-
 declare const globalThis: {
   __SERVER_CONTENT?: ServerSideContent;
 };
@@ -19,7 +21,7 @@ export function GlobalThisEmbedder(props: {
 
   useServerInsertedHTML(() => {
     const html = [
-      // Hydrate __SERVER_CONTENT on client globalThis
+      // Embed __SERVER_CONTENT on client globalThis
       `globalThis.__SERVER_CONTENT ??= ${JSON.stringify(props.embedOnServer)};`,
     ];
 
