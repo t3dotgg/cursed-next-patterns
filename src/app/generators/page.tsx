@@ -1,5 +1,7 @@
 import { generatorComponent } from "./helpers/generator-component";
 
+export const dynamic = "force-dynamic";
+
 const sleep = (ms: number) => new Promise<void>((res) => setTimeout(res, ms));
 
 const Steps = generatorComponent(async function* () {
